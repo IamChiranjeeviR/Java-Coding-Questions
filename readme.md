@@ -59,6 +59,8 @@ Display:
 <sentence> is an invalid sentence
 ```
 
+---
+
 ### Word Validation
 
 If the word contains any:
