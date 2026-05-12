@@ -34,14 +34,16 @@
       }
 
       .container {
-        display: flex;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
         align-items: center;
         justify-content: space-evenly;
+        column-gap: 30px;
+        row-gap: 20px;
       }
 
       .box {
         border: 1px solid white;
-        width: 30%;
         padding: 20px 40px;
         font-size: 30px;
         cursor: pointer;
@@ -54,6 +56,35 @@
       .box:hover {
         background-color: #5a5959;
       }
+
+      @media screen and (max-width: 832px) {
+        .container {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media screen and (max-width: 569px) {
+        .container {
+          grid-template-columns: 1fr;
+        }
+
+        #question-box {
+          padding: 10px 40px;
+        }
+      }
+
+      @media screen and (max-width: 375px) {
+        h1 {
+          font-size: 30px;
+          margin: 0px;
+          margin-top: 30px;
+          margin-bottom: 10px;
+        }
+
+        #question-box {
+          padding: 10px 40px;
+        }
+      }
     </style>
   </head>
   <body>
@@ -61,6 +92,11 @@
     <div id="question-box">
       <div class="container">
         <a href="" class="box">Question 1</a>
+        <a href="" class="box">Question 2</a>
+        <a href="" class="box">Question 3</a>
+        <a href="" class="box">Question 4</a>
+        <a href="" class="box">Question 5</a>
+        <a href="" class="box">Question 10</a>
       </div>
     </div>
   </body>
