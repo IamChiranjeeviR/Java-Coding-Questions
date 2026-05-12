@@ -3,27 +3,10 @@ layout: default
 title: Java Questions
 ---
 
-<h1>📚 Java Practice Questions</h1>
+<!DOCTYPE html>
+<html>
 
-<div class="container">
-
-{% raw %}
-{% for file in site.static_files %}
-
-    {% if file.path contains '/README.md' %}
-
-        <div class="card">
-            <a href="{{ file.path }}">
-                {{ file.path }}
-            </a>
-        </div>
-
-    {% endif %}
-
-{% endfor %}
-{% endraw %}
-
-</div>
+<head>
 
 <style>
 
@@ -33,22 +16,67 @@ body {
     font-family: Arial;
 }
 
+h1 {
+    text-align: center;
+}
+
 .container {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    max-width: 700px;
+    margin: auto;
 }
 
 .card {
     background-color: #1e1e1e;
-    padding: 15px;
+    padding: 20px;
     border-radius: 10px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.02);
 }
 
 a {
     color: #00ffcc;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 </style>
+
+</head>
+
+<body>
+
+<h1>📚 Java Practice Questions</h1>
+
+<div class="container">
+
+{% raw %}
+{% assign questionFolders = site.pages %}
+
+{% for page in questionFolders %}
+
+    {% if page.path contains 'Questions/' and page.path contains 'README.md' %}
+
+        <div class="card">
+
+            <a href="{{ page.path }}">
+                {{ page.path | split: '/' | slice: 1 }}
+            </a>
+
+        </div>
+
+    {% endif %}
+
+{% endfor %}
+{% endraw %}
+
+</div>
+
+</body>
+
+</html>
