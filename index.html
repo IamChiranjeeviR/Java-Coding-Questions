@@ -1,0 +1,54 @@
+---
+layout: default
+title: Java Questions
+---
+
+<h1>📚 Java Practice Questions</h1>
+
+<div class="container">
+
+{% raw %}
+{% for file in site.static_files %}
+
+    {% if file.path contains '/README.md' %}
+
+        <div class="card">
+            <a href="{{ file.path }}">
+                {{ file.path }}
+            </a>
+        </div>
+
+    {% endif %}
+
+{% endfor %}
+{% endraw %}
+
+</div>
+
+<style>
+
+body {
+    background-color: #121212;
+    color: white;
+    font-family: Arial;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.card {
+    background-color: #1e1e1e;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+a {
+    color: #00ffcc;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+</style>
